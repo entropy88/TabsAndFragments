@@ -40,6 +40,7 @@ public class FragmentOne extends Fragment {
                newQuote.setText(QuotationAsyncTask.text);
                MainActivity.quotesDb.quotesDao().addQuote(newQuote);
                Toast.makeText(view.getContext(), "quote added", Toast.LENGTH_LONG).show();
+               btnAdd.setImageResource(R.drawable.ic_favorite_black_24px);
             }
         });
 

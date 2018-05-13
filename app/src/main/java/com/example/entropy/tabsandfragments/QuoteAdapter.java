@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -33,6 +34,13 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteViewHolder>{
 
             holder.mText.setText(item.getText());
             holder.mAuthor.setText(item.getAuthor());
+            holder.mDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    MainActivity.quotesDb.quotesDao().deleteQuote(item.getId());
+                    Toast.makeText(view.getContext(), "Quote deleted", Toast.LENGTH_SHORT).show();
+                }
+            });
 
 
         }
