@@ -10,15 +10,33 @@
         android:textSize="50sp"
         android:text="text"/>
 
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal">
     <ImageButton
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:src="@drawable/ic_favorite_black_24px"
-        android:id="@+id/btn_delete"/>
+        android:id="@+id/btn_delete"
+        android:background="@android:color/white"
+        android:padding="@dimen/margin_medium"/>
+
+        <ImageButton
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/ic_share_black_24px"
+            android:background="@android:color/white"
+            android:padding="@dimen/margin_medium"
+            android:id="@+id/btn_share"/>
     <TextView
         android:id="@+id/itemAuthor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="italic"
+
+        android:padding="@dimen/margin_medium"
         android:text="author"/>
+
+    </LinearLayout>
 </LinearLayout>

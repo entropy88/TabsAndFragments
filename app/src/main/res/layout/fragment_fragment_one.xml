@@ -4,6 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FragmentOne">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,17 +21,38 @@
     android:layout_width="match_parent"
     android:id="@+id/tv_text"
     android:textSize="50sp"/>
-    <TextView
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:textStyle="italic"
-        android:id="@+id/tv_author"/>
+
+
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
 
         <ImageButton
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:src="@drawable/ic_favorite_border_black_24px"
             android:background="@android:color/white"
-            android:id="@+id/btn_add_quote"/>
+            android:id="@+id/btn_add_quote"
+            android:padding="@dimen/margin_medium"/>
+
+            <ImageButton
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_share_black_24px"
+                android:background="@android:color/white"
+                android:padding="@dimen/margin_medium"
+                android:id="@+id/btn_share"/>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textStyle="italic"
+                android:id="@+id/tv_author"
+                android:text="author"
+                android:layout_gravity="right"
+                android:padding="@dimen/margin_medium"/>
+        </LinearLayout>
     </LinearLayout>
+    </ScrollView>
 </FrameLayout>

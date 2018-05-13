@@ -78,6 +78,7 @@ public class QuotationAsyncTask extends AsyncTask<Void, Void, Void>{
 
             FragmentOne.tvText.setText(text);
             FragmentOne.tvAuthor.setText(author);
+            FragmentOne.btnAdd.setImageResource(R.drawable.ic_favorite_border_black_24px);
             super.onPostExecute(Void);
 
         }

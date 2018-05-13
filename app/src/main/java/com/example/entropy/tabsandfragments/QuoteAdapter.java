@@ -39,6 +39,7 @@ public class QuoteAdapter extends RecyclerView.Adapter<QuoteViewHolder>{
                 public void onClick(View view) {
                     MainActivity.quotesDb.quotesDao().deleteQuote(item.getId());
                     Toast.makeText(view.getContext(), "Quote deleted", Toast.LENGTH_SHORT).show();
+
                 }
             });
 

@@ -1,5 +1,6 @@
 package com.example.entropy.tabsandfragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -17,7 +18,8 @@ public class FragmentOne extends Fragment {
 
    public static TextView tvAuthor;
     public static TextView tvText;
-    ImageButton btnAdd;
+   public static ImageButton btnAdd;
+   ImageButton btnShare;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class FragmentOne extends Fragment {
         tvAuthor= (TextView) view.findViewById(R.id.tv_author);
         tvText= (TextView) view.findViewById(R.id.tv_text);
         btnAdd=(ImageButton) view.findViewById(R.id.btn_add_quote);
+        btnShare=(ImageButton) view.findViewById(R.id.btn_share);
 
         QuotationAsyncTask newQuote= new QuotationAsyncTask();
         newQuote.execute();
@@ -41,6 +44,16 @@ public class FragmentOne extends Fragment {
                MainActivity.quotesDb.quotesDao().addQuote(newQuote);
                Toast.makeText(view.getContext(), "quote added", Toast.LENGTH_LONG).show();
                btnAdd.setImageResource(R.drawable.ic_favorite_black_24px);
+            }
+        });
+        btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(android.content.Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(android.content.Intent.EXTRA_SUBJECT,"Subject test");
+                i.putExtra(android.content.Intent.EXTRA_TEXT, "extra text that you want to put");
+                startActivity(Intent.createChooser(i,"Share via"));
             }
         });
 
