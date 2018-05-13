@@ -4,11 +4,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FragmentOne">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="fragment 1" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+
+<TextView
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:id="@+id/tv_text"/>
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/tv_author"/>
+
+        <ImageButton
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/btn_add_quote"/>
+    </LinearLayout>
 </FrameLayout>
